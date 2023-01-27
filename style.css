@@ -1,0 +1,174 @@
+:root {
+  --primary-color: #f2c744;
+  --light: #f4f6f9;
+  --dark: #000;
+  --primary-font: 'Shadows Into Light', cursive;
+  --secondary-font: 'Dancing Script', cursive;
+}
+
+body {
+  margin: 10px;
+}
+
+.wrapper {
+  display: grid;
+  gap: 10px;
+  grid-template: 
+    "header"
+    "sidebar"
+    "main"
+    "footer";
+}
+
+.block {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  display: grid;
+}
+
+.header {
+  grid-area: header;
+  padding: 10px 0;
+}
+
+.main {
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: main;
+  padding: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: fit-content;
+  row-gap: 10px;
+  padding: 10px;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.logo {
+  display: block;
+  justify-self: center;
+}
+
+.heading {
+  font-family: var(--secondary-font);
+  justify-self: center;
+  margin: 0;
+}
+
+.text {
+  font-family: var(--primary-font);
+  justify-self: center;
+  margin: 0;
+}
+
+.header-logo {
+  width: 70px;
+}
+
+.header-heading {
+  font-size: 20px;
+}
+
+.header-text {
+  font-size: 14px;
+}
+
+.main img {
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+
+.main-column {
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 10px;
+}
+
+.sidebar-avatar {
+  border-radius: 50%;
+  display: block;
+  height: 100px;
+  justify-self: center;
+  width: 100px;
+  object-fit: cover;
+}
+
+.sidebar-heading {
+  font-size: 16px;
+}
+
+.sidebar-author {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sidebar-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.sidebar-links {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(4, min-content);
+  justify-self: center;
+}
+
+.sidebar-link {
+  display: block;
+  height: 15px;
+  width: 15px;
+}
+
+.sidebar-svg {
+  fill: var(--dark);
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-link:hover .sidebar-svg {
+  fill: var(--primary-color);
+  scale: 1.5;
+}
+
+.footer-logo {
+  width: 30px;
+}
+
+.footer-heading {
+  font-size: 12px;
+}
+
+.footer-text {
+  font-size: 10px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .wrapper {
+    grid-template: 
+    "header header header"
+    "main main sidebar"
+    "footer footer footer";
+  }
+
+  .main {
+    padding: 30px;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 10px;
+    padding: 30px;
+  }
+
+}
